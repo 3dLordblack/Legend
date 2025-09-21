@@ -194,6 +194,11 @@
             position: relative;
             z-index: 2;
         }
+
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-black text-white">
@@ -211,9 +216,26 @@
                 <a href="#legend" class="font-semibold text-gray-300 nav-link">Legend</a>
                 <a href="#streams" class="font-semibold text-gray-300 nav-link">Streams</a>
             </nav>
-            <a href="https://paypal.me/3dLordblack?locale.x=en_US" target="_blank" class="bg-yellow-500 text-black font-bold py-2 px-5 rounded-md button-glow uppercase tracking-wider" style="animation: support-pulse 2.5s infinite ease-in-out;">
-                <i class="fa-solid fa-hand-holding-dollar mr-2"></i>Support
-            </a>
+            <div class="flex items-center">
+                <a href="https://paypal.me/3dLordblack?locale.x=en_US" target="_blank" class="hidden sm:inline-block bg-yellow-500 text-black font-bold py-2 px-5 rounded-md button-glow uppercase tracking-wider" style="animation: support-pulse 2.5s infinite ease-in-out;">
+                    <i class="fa-solid fa-hand-holding-dollar mr-2"></i>Support
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-yellow-400 text-2xl z-30">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-black transform -translate-x-full">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="#achievements" class="text-2xl font-bold text-gray-300 nav-link mobile-nav-link">Achievements</a>
+                <a href="#legend" class="text-2xl font-bold text-gray-300 nav-link mobile-nav-link">Legend</a>
+                <a href="#streams" class="text-2xl font-bold text-gray-300 nav-link mobile-nav-link">Streams</a>
+                 <a href="https://paypal.me/3dLordblack?locale.x=en_US" target="_blank" class="sm:hidden mt-8 bg-yellow-500 text-black font-bold py-3 px-8 rounded-md button-glow uppercase tracking-wider" style="animation: support-pulse 2.5s infinite ease-in-out;">
+                    <i class="fa-solid fa-hand-holding-dollar mr-2"></i>Support
+                </a>
+            </div>
         </div>
     </header>
 
@@ -221,15 +243,15 @@
     <main class="relative z-10">
         <section id="hero" class="min-h-screen flex items-center justify-center text-center section-bg overflow-hidden">
             <div class="container mx-auto px-4 reveal pt-20">
-                <img src="https://i.ibb.co/rRKnxBsq/349479611-247437051299860-8073842707729018883-n-removebg-preview.png" alt="Lordblack Main Logo" class="w-3/4 md:w-1/2 lg:w-2/5 mx-auto mb-6 logo-pulse">
-                <h2 class="text-5xl md:text-6xl font-black text-black tracking-wider mb-4" style="text-shadow: 0 0 5px var(--gold), 0 0 10px var(--gold), 0 0 15px var(--dark-gold);">3D LORDBLACK</h2>
-                <h1 class="text-5xl md:text-7xl font-black text-glow">KING OF MIRAMAR</h1>
-                <p class="text-xl md:text-2xl mt-4 text-gray-300 font-light">Unrivaled Skill & Tactical Dominance in PUBG</p>
+                <img src="https://i.ibb.co/rRKnxBsq/349479611-247437051299860-8073842707729018883-n-removebg-preview.png" alt="Lordblack Main Logo" class="w-3/4 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto mb-6 logo-pulse">
+                <h2 class="text-4xl md:text-6xl font-black text-black tracking-wider mb-4" style="text-shadow: 0 0 5px var(--gold), 0 0 10px var(--gold), 0 0 15px var(--dark-gold);">3D LORDBLACK</h2>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-glow">KING OF MIRAMAR</h1>
+                <p class="text-lg md:text-2xl mt-4 text-gray-300 font-light">Unrivaled Skill & Tactical Dominance in PUBG</p>
                 <div class="mt-10 flex justify-center items-center space-x-8">
-                    <a href="https://www.instagram.com/3dlordblack/" target="_blank" class="text-5xl text-gray-300 instagram-hover transition-transform duration-300">
+                    <a href="https://www.instagram.com/3dlordblack/" target="_blank" class="text-4xl sm:text-5xl text-gray-300 instagram-hover transition-transform duration-300">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.youtube.com/@LordblackGaming/streams" target="_blank" class="text-5xl text-gray-300 hover:text-red-600 transition-transform transform hover:scale-110 duration-300">
+                    <a href="https://www.youtube.com/@LordblackGaming/streams" target="_blank" class="text-4xl sm:text-5xl text-gray-300 hover:text-red-600 transition-transform transform hover:scale-110 duration-300">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -239,30 +261,31 @@
         <!-- Achievements Section -->
         <section id="achievements" class="py-24 bg-black">
             <div class="container mx-auto px-4 text-center">
-                 <h2 class="text-4xl font-bold mb-12 text-glow reveal">CROWNED ACHIEVEMENTS</h2>
+                 <h2 class="text-3xl md:text-4xl font-bold mb-12 text-glow reveal">CROWNED ACHIEVEMENTS</h2>
                  <div class="max-w-2xl mx-auto reveal" style="perspective: 1000px;">
-                    <div class="gold-card">
+                    <div class="gold-card p-6 md:p-8">
                         <i class="fa-solid fa-globe-americas world-map-bg"></i>
                         <div class="card-content">
-                            <div class="flex justify-end items-start mb-8">
+                            <div class="flex justify-between items-start mb-6 md:mb-8">
+                                <i class="fa-solid fa-wifi text-black/50 text-2xl -rotate-45"></i>
                                 <div class="text-right">
-                                    <h3 class="font-bold text-xl md:text-2xl tracking-widest text-black/80 font-sans uppercase">King of Miramar</h3>
+                                    <h3 class="font-bold text-lg md:text-2xl tracking-widest text-black/80 font-sans uppercase">King of Miramar</h3>
                                     <p class="text-xs md:text-sm font-semibold text-black/70 font-sans">GLOBAL ELITE PLAYER</p>
                                 </div>
                             </div>
-                            <div class="text-center mb-8">
-                                <p class="text-2xl md:text-4xl font-semibold tracking-[0.2em] text-black/90">5472 0574 3</p>
+                            <div class="text-center mb-6 md:mb-8">
+                                <p class="text-2xl md:text-4xl font-semibold tracking-[0.15em] md:tracking-[0.2em] text-black/90">5472 0574 3</p>
                             </div>
-                            <div class="flex justify-between items-end">
-                                <div>
+                            <div class="flex flex-col space-y-4 text-center sm:flex-row sm:space-y-0 sm:text-left sm:justify-between items-center">
+                                <div class="w-full sm:w-auto">
                                     <p class="text-xs uppercase font-bold text-black/70">Player Name</p>
                                     <p class="text-lg md:text-xl font-bold text-black/90">3D LORDBLACK</p>
                                 </div>
-                                <div class="text-right">
+                                <div class="w-full sm:w-auto text-center sm:text-right">
                                     <p class="text-xs uppercase font-bold text-black/70">Elite Rank</p>
                                     <p class="text-lg md:text-xl font-bold text-black/90">96+</p>
                                 </div>
-                                <div class="text-right">
+                                <div class="w-full sm:w-auto text-center sm:text-right">
                                     <p class="text-xs uppercase font-bold text-black/70">Conqueror Dominance</p>
                                     <p class="text-lg md:text-xl font-bold text-black/90">40x+ Unbroken</p>
                                 </div>
@@ -276,11 +299,11 @@
         <!-- Coaching Section -->
         <section id="legend" class="py-24 section-bg">
             <div class="container mx-auto px-4 text-center reveal">
-                <h2 class="text-4xl font-bold mb-6 text-glow">LEARN FROM THE KING OF MIRAMAR HIMSELF</h2>
-                <p class="text-gray-300 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-glow">LEARN FROM THE KING OF MIRAMAR HIMSELF</h2>
+                <p class="text-gray-300 mb-10 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
                     For those seeking to ascend, the King of Miramar offers his legendary insight. This is an exclusive opportunity to receive personalized mentorship in advanced tactics, map control, and the mechanical skill required to dominate the battlefield. Learn directly from the master himself and begin your own path to greatness.
                 </p>
-                <a href="https://www.instagram.com/3dlordblack/" target="_blank" class="mt-4 inline-block bg-yellow-500 text-black font-bold py-4 px-10 rounded-md text-lg button-glow hover:bg-yellow-600 uppercase tracking-wider">
+                <a href="https://www.instagram.com/3dlordblack/" target="_blank" class="mt-4 inline-block bg-yellow-500 text-black font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-md text-lg button-glow hover:bg-yellow-600 uppercase tracking-wider">
                     <i class="fab fa-instagram mr-3"></i>Contact on Instagram
                 </a>
             </div>
@@ -289,9 +312,9 @@
         <!-- Streams Section -->
         <section id="streams" class="py-24 bg-black">
             <div class="container mx-auto px-4 text-center reveal">
-                <h2 class="text-4xl font-bold mb-4 text-glow">Witness The Domination Live</h2>
-                <p class="text-gray-300 mb-12 max-w-2xl mx-auto text-lg leading-relaxed">Don't miss a single moment of elite PUBG gameplay. Follow on YouTube for daily streams, tactical breakdowns, and community events.</p>
-                <a href="https://www.youtube.com/@LordblackGaming/streams" target="_blank" class="mt-4 inline-block bg-red-600 text-white font-bold py-4 px-10 rounded-md text-lg button-glow hover:bg-red-700 uppercase tracking-wider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-glow">Witness The Domination Live</h2>
+                <p class="text-gray-300 mb-12 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">Don't miss a single moment of elite PUBG gameplay. Follow on YouTube for daily streams, tactical breakdowns, and community events.</p>
+                <a href="https://www.youtube.com/@LordblackGaming/streams" target="_blank" class="mt-4 inline-block bg-red-600 text-white font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-md text-lg button-glow hover:bg-red-700 uppercase tracking-wider">
                     <i class="fab fa-youtube mr-3"></i>Go to YouTube Channel
                 </a>
             </div>
@@ -303,17 +326,18 @@
     <footer class="py-8 border-t border-gray-800/50 bg-black">
         <div class="container mx-auto px-4 text-center text-gray-400">
             <div class="flex justify-center items-center space-x-6 mb-4">
-                <a href="https://www.instagram.com/3dlordblack/" target="_blank" class="text-3xl instagram-hover transition-transform duration-300">
+                <a href="https://www.instagram.com/3dlordblack/" target="_blank" class="text-2xl sm:text-3xl instagram-hover transition-transform duration-300">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.youtube.com/@LordblackGaming/streams" target="_blank" class="text-3xl hover:text-red-600 transition-transform transform hover:scale-110 duration-300">
+                <a href="https://www.youtube.com/@LordblackGaming/streams" target="_blank" class="text-2xl sm:text-3xl hover:text-red-600 transition-transform transform hover:scale-110 duration-300">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://paypal.me/3dLordblack?locale.x=en_US" target="_blank" class="text-3xl hover:text-blue-400 transition-transform transform hover:scale-110 duration-300">
+                <a href="https://paypal.me/3dLordblack?locale.x=en_US" target="_blank" class="text-2xl sm:text-3xl hover:text-blue-400 transition-transform transform hover:scale-110 duration-300">
                     <i class="fab fa-paypal"></i>
                 </a>
             </div>
             <p>&copy; 2024 Lordblack Gaming. All Rights Reserved.</p>
+            <p class="mt-2 text-sm">IN COLLABORATION WITH <a href="https://lex-verse.github.io/Lex-verse/" target="_blank" class="font-semibold text-purple-400 hover:text-purple-300 hover:underline transition-colors duration-300">LEXVERSE</a></p>
         </div>
     </footer>
 
@@ -400,6 +424,32 @@
         
         revealElements.forEach(el => {
             revealObserver.observe(el);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+            if (mobileMenu.classList.contains('-translate-x-full')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
         });
 
     </script>
